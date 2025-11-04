@@ -1,0 +1,309 @@
+{
+	"info": {
+		"_postman_id": "72652b37-2a24-4a97-80f0-be270f870325",
+		"name": "expenseDB-assignment",
+		"description": "Node.js + Express + MongoDB backend for Expense Tracker app. Provides CRUD and filtering endpoints for transactions.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "37687945"
+	},
+	"item": [
+		{
+			"name": "filters",
+			"item": [
+				{
+					"name": "filterByExpense",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"type\": \"expense\",\r\n  \"amount\": 2500,\r\n  \"description\": \"Bought groceries and snacks\",\r\n  \"category\": \"Food\",\r\n  \"date\": \"2025-10-30\"\r\n}\r\n"
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/transactions?type=expense",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"transactions"
+							],
+							"query": [
+								{
+									"key": "type",
+									"value": "expense"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "filterByCategory",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"type\": \"expense\",\r\n  \"amount\": 2500,\r\n  \"description\": \"Bought groceries and snacks\",\r\n  \"category\": \"Food\",\r\n  \"date\": \"2025-10-30\"\r\n}\r\n"
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/transactions?category=Food",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"transactions"
+							],
+							"query": [
+								{
+									"key": "category",
+									"value": "Food"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "filterByDate",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"type\": \"expense\",\r\n  \"amount\": 2500,\r\n  \"description\": \"Bought groceries and snacks\",\r\n  \"category\": \"Food\",\r\n  \"date\": \"2025-10-30\"\r\n}\r\n"
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/transactions?startDate=2025-10-01&endDate=2025-10-31",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"transactions"
+							],
+							"query": [
+								{
+									"key": "startDate",
+									"value": "2025-10-01"
+								},
+								{
+									"key": "endDate",
+									"value": "2025-10-31"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "health",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4000/health",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"health"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add-transaction",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"type\": \"income\",\r\n  \"amount\": 75000,\r\n  \"description\": \"Freelance website project payment\",\r\n  \"category\": \"Freelance\",\r\n  \"date\": \"2025-10-30\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/api/transactions",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"transactions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get-transactions",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"type\": \"expense\",\r\n  \"amount\": 2500,\r\n  \"description\": \"Bought groceries and snacks\",\r\n  \"category\": \"Food\",\r\n  \"date\": \"2025-10-30\"\r\n}\r\n"
+				},
+				"url": {
+					"raw": "http://localhost:4000/api/transactions",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"transactions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get-transactionByID",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"type\": \"expense\",\r\n  \"amount\": 2500,\r\n  \"description\": \"Bought groceries and snacks\",\r\n  \"category\": \"Food\",\r\n  \"date\": \"2025-10-30\"\r\n}\r\n"
+				},
+				"url": {
+					"raw": "http://localhost:4000/api/transactions/6904d62e59af3d2965d70b25",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"transactions",
+						"6904d62e59af3d2965d70b25"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete-transaction",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4000/api/transactions/6904d62e59af3d2965d70b25",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"transactions",
+						"6904d62e59af3d2965d70b25"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "filter-pagination-sorting",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4000/api/transactions?limit=5&page=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"transactions"
+					],
+					"query": [
+						{
+							"key": "limit",
+							"value": "5"
+						},
+						{
+							"key": "page",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update-transaction",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"type\": \"income\",\r\n  \"amount\": 80000,\r\n  \"description\": \"Updated freelance project payment\",\r\n  \"category\": \"Freelance\",\r\n  \"date\": \"2025-10-30\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/api/transactions/6904d7f259af3d2965d70b35",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"transactions",
+						"6904d7f259af3d2965d70b35"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

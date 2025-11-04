@@ -1,0 +1,68 @@
+# -----------------------------------------------------
+# 🧰 General
+# -----------------------------------------------------
+node_modules/
+dist/
+build/
+.env
+.env.local
+.env.development
+.env.production
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+.DS_Store
+Thumbs.db
+
+# -----------------------------------------------------
+# 🗂️ Editor / System Files
+# -----------------------------------------------------
+.vscode/
+.idea/
+*.swp
+*.swo
+*.bak
+*.tmp
+
+# -----------------------------------------------------
+# ⚙️ Backend (Node + Express + MongoDB)
+# -----------------------------------------------------
+backend/node_modules/
+backend/dist/
+backend/build/
+backend/.env
+backend/.env.local
+backend/.DS_Store
+backend/coverage/
+backend/logs/
+backend/npm-debug.log*
+backend/pnpm-debug.log*
+backend/yarn-debug.log*
+backend/yarn-error.log*
+
+# -----------------------------------------------------
+# 💻 Frontend (React + Vite + TypeScript)
+# -----------------------------------------------------
+frontend/node_modules/
+frontend/dist/
+frontend/.env
+frontend/.env.local
+frontend/.DS_Store
+frontend/coverage/
+frontend/npm-debug.log*
+frontend/pnpm-debug.log*
+frontend/yarn-debug.log*
+frontend/yarn-error.log*
+
+# -----------------------------------------------------
+# 🧪 Testing / Temporary Files
+# -----------------------------------------------------
+coverage/
+.tmp/
+.cache/
+.vite/
+vite.config.timestamp-*.json
+jest.config.js
+*.tsbuildinfo
